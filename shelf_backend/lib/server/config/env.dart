@@ -22,7 +22,7 @@ class EnvConfig {
   }
   
   /// Get JWT secret key
-  String get jwtSecret => env['JWT_SECRET'] ?? 'y';
+  String get jwtSecret => env['JWT_SECRET'] ?? '';
   
   /// Get MongoDB connection URI
   String get dbUri => env['DB_URI'] ?? 
