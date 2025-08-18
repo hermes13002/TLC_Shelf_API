@@ -39,11 +39,11 @@ class Server {
       .addHandler(_routeRequest);
     
     // Get host and port from environment variables or use defaults
-    final host = Platform.environment['HOST'] ?? 'localhost';
+    // final host = Platform.environment['HOST'] ?? 'localhost';
     final port = int.parse(Platform.environment['PORT'] ?? '8080');
     
     // Start the server
-    final server = await serve(handler, host, port);
+    final server = await serve(handler, InternetAddress.anyIPv4, port);
     print('Server running at http://${server.address.host}:${server.port}');
   }
   
