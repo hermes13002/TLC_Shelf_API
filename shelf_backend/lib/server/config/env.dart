@@ -26,7 +26,7 @@ class EnvConfig {
   
   /// Get MongoDB connection URI
   String get dbUri => env['DB_URI'] ?? 
-      "";
+      "mongodb+srv://soaresayoigbala:Excelsior13\$@techlawcluster1.4oil6yw.mongodb.net/?retryWrites=true&w=majority&tls=true";
   
   /// Get Groq API key
   String get groqApiKey => env['GROQ_API_KEY'] ?? 
