@@ -1,3 +1,5 @@
+// import 'dart:io';
+
 import 'package:dotenv/dotenv.dart' as dotenv;
 
 /// Environment configuration class for the server
@@ -11,7 +13,8 @@ class EnvConfig {
   }
   
   EnvConfig._internal() {
-    env = dotenv.DotEnv();
+    env = dotenv.DotEnv(includePlatformEnvironment: true)..load();
+
     // Load environment variables from .env file
     try {
       env.load();
@@ -30,6 +33,7 @@ class EnvConfig {
   
   /// Get Groq API key
   String get groqApiKey => env['GROQ_API_KEY'] ?? '';
+  // String get groqApiKey => Platform.environment['GROQ_API_KEY'] ?? '';
   
   /// Get Groq API URL
   // String get groqApiUrl => 'https://api.groq.com/openai/v1/chat/completions';
