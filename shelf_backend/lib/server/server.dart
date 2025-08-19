@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:io';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
@@ -13,7 +15,7 @@ import 'services/database_service.dart';
 /// Main server class
 class Server {
   static final Server _instance = Server._internal();
-  final _envConfig = EnvConfig();
+  final envConfig = EnvConfig();
   final _databaseService = DatabaseService();
   final _authMiddleware = AuthMiddleware();
   final _publicRoutes = PublicRoutes();
