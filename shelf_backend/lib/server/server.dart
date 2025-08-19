@@ -46,6 +46,7 @@ class Server {
     
     // Start the server
     final server = await serve(handler, InternetAddress.anyIPv4, port);
+    // final server = await serve(handler, host, port);
     print('Server running at http://${server.address.host}:${server.port}');
   }
   

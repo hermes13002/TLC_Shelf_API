@@ -266,9 +266,11 @@ class ChatService {
         "content": userMessage
       });
     }
+
+    print('Groq API Key Length: ${_envConfig.groqApiKey.length}');
     
     final response = await http.post(
-      Uri.parse(_envConfig.groqApiUrl),
+      Uri.parse('https://api.groq.com/openai/v1/chat/completions'),
       headers: {
         'Authorization': 'Bearer ${_envConfig.groqApiKey}',
         'Content-Type': 'application/json',

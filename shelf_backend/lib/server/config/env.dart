@@ -16,6 +16,7 @@ class EnvConfig {
     try {
       env.load();
       print('Environment variables loaded from .env file');
+      
     } catch (e) {
       print('No .env file found, using environment variables or defaults');
     }
@@ -25,13 +26,11 @@ class EnvConfig {
   String get jwtSecret => env['JWT_SECRET'] ?? '';
   
   /// Get MongoDB connection URI
-  String get dbUri => env['DB_URI'] ?? 
-      "mongodb+srv://soaresayoigbala:Excelsior13\$@techlawcluster1.4oil6yw.mongodb.net/?retryWrites=true&w=majority&tls=true";
+  String get dbUri => "mongodb+srv://soaresayoigbala:Excelsior13\$@techlawcluster1.4oil6yw.mongodb.net/?retryWrites=true&w=majority&tls=true";
   
   /// Get Groq API key
-  String get groqApiKey => env['GROQ_API_KEY'] ?? 
-      '';
+  String get groqApiKey => env['GROQ_API_KEY'] ?? '';
   
   /// Get Groq API URL
-  String get groqApiUrl => 'https://api.groq.com/openai/v1/chat/completions';
+  // String get groqApiUrl => 'https://api.groq.com/openai/v1/chat/completions';
 }
